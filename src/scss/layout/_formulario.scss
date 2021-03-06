@@ -1,0 +1,45 @@
+
+
+.formulario{
+    width: 100% ;
+
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    margin: 2rem auto;
+
+    label{
+        color: $blanco;
+        flex: 0 0 10rem;    //no va a crecer, y medira fijo 10 rem
+    }
+
+    input{
+        flex: 1;            //al no tener que compartir el espacio tomara un pixel hasta tomar todo el espacio
+        padding: $separacion / 4;
+        border-radius: 1rem;
+        border: none;
+    }
+
+}
+
+
+.alerta{
+    padding: $separacion / 2;
+    text-align: center;
+    color: $blanco;
+    width: 100%;
+    display: block;
+    margin: 1rem auto;
+    font-size: 2rem;
+
+    &.error{
+        background-color: red;
+    }
+
+    &.correcto{
+        background-color: $azul;
+    }
+
+}
