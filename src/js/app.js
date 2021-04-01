@@ -96,14 +96,19 @@ function cambiarSeccion(){
 async function mostrarServicios(){ //funcion asincrona
     
     try {
-        const resultado = await fetch('./servicios.json');  //obtene de esta carpeta
+
+        const url = 'http://localhost:3000/servicios.php';
+
+        const resultado = await fetch(url);  //obtene de esta carpeta
         const db = await resultado.json();      //el resultado es un jotason
         
-        const { servicios } = db; //destructuring, de DB sacale los "servicios" y guardalos
+        // console.log(db);
+
+        // const { servicios } = db; //destructuring, de DB sacale los "servicios" y guardalos
 
         //generar html
 
-        servicios.forEach( servicio => {
+        db.forEach( servicio => {
             const { id,nombre,precio } = servicio;
 
             //DOM scripting
